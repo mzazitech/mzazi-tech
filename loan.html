@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for a Loan — MZAZI TECH ENTERPRISE</title>
+  <meta name="description" content="Apply for a personal, business, or emergency loan with MZAZI TECH ENTERPRISE. Fast approval in KES or USD." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="notification-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">M</div>
+      <div><div class="logo-text">MZAZI TECH</div><div class="logo-sub">Enterprise</div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="loan.html" class="active">Apply</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="loan.html">Apply</a><a href="payment.html">Payment</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="login.html">Login</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="hero-bg-orb hero-bg-orb-1" style="opacity:.15"></div>
+  <h1><i class="fas fa-paper-plane"></i> Loan Application</h1>
+  <p>Complete the form below and we'll get back to you within 24 hours</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:.7rem"></i> Apply for Loan</div>
+</div>
+
+<!-- PROCESS STEPS -->
+<div style="background:var(--bg-secondary);padding:48px 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+      <div style="padding:24px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border)">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--grad-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;margin:0 auto 12px">1</div>
+        <h4 style="font-size:.95rem;margin-bottom:6px">Fill Form</h4>
+        <p style="font-size:.82rem;color:var(--text-muted)">Complete the application form with your details</p>
+      </div>
+      <div style="padding:24px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border)">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(124,58,237,.1);color:var(--secondary);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;margin:0 auto 12px">2</div>
+        <h4 style="font-size:.95rem;margin-bottom:6px">WhatsApp Review</h4>
+        <p style="font-size:.82rem;color:var(--text-muted)">We review your application via WhatsApp</p>
+      </div>
+      <div style="padding:24px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border)">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(6,182,212,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;margin:0 auto 12px">3</div>
+        <h4 style="font-size:.95rem;margin-bottom:6px">Approval</h4>
+        <p style="font-size:.82rem;color:var(--text-muted)">Get approved within 24 hours of submission</p>
+      </div>
+      <div style="padding:24px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border)">
+        <div style="width:48px;height:48px;border-radius:50%;background:rgba(16,185,129,.1);color:var(--success);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;margin:0 auto 12px">4</div>
+        <h4 style="font-size:.95rem;margin-bottom:6px">Disbursement</h4>
+        <p style="font-size:.82rem;color:var(--text-muted)">Funds sent to your M-Pesa or bank account</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOAN APPLICATION FORM -->
+<section class="loan-form-section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start">
+
+      <!-- MAIN FORM -->
+      <div class="loan-form-inner">
+        <div style="text-align:center;margin-bottom:36px">
+          <h2 style="font-size:1.8rem;margin-bottom:8px">Loan Application Form</h2>
+          <p style="color:var(--text-muted)">All fields marked <span style="color:var(--danger)">*</span> are required. Your information is kept 100% confidential.</p>
+        </div>
+
+        <form id="loanForm" novalidate>
+          <!-- Personal Information -->
+          <div class="form-section-title"><i class="fas fa-user"></i> Personal Information</div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Full Name <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-user input-icon"></i><input type="text" class="form-control" id="loanFullName" placeholder="John Kamau Mwangi" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-envelope input-icon"></i><input type="email" class="form-control" id="loanEmail" placeholder="john@example.com" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-phone input-icon"></i><input type="tel" class="form-control" id="loanPhone" placeholder="+254 7XX XXX XXX" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Country <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-globe input-icon"></i>
+                <select class="form-control" id="loanCountry">
+                  <option value="">Select country</option>
+                  <option value="Kenya">Kenya</option>
+                  <option value="Uganda">Uganda</option>
+                  <option value="Tanzania">Tanzania</option>
+                  <option value="Rwanda">Rwanda</option>
+                  <option value="Ethiopia">Ethiopia</option>
+                  <option value="Nigeria">Nigeria</option>
+                  <option value="Ghana">Ghana</option>
+                  <option value="South Africa">South Africa</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United States">United States</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Identity -->
+          <div class="form-section-title"><i class="fas fa-id-card"></i> Identity Verification</div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">National ID / Passport Number <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-id-badge input-icon"></i><input type="text" class="form-control" id="loanNationalId" placeholder="e.g. 12345678" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date of Birth <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-calendar input-icon"></i><input type="date" class="form-control" id="loanDob" /></div>
+            </div>
+          </div>
+
+          <!-- Employment & Income -->
+          <div class="form-section-title"><i class="fas fa-briefcase"></i> Employment &amp; Income</div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Employment Status <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-briefcase input-icon"></i>
+                <select class="form-control" id="loanEmployment">
+                  <option value="">Select status</option>
+                  <option value="Employed (Full-time)">Employed (Full-time)</option>
+                  <option value="Employed (Part-time)">Employed (Part-time)</option>
+                  <option value="Self-Employed">Self-Employed / Business Owner</option>
+                  <option value="Contractor">Contractor / Freelancer</option>
+                  <option value="Retired">Retired with pension</option>
+                  <option value="Student">Student (with guarantor)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Monthly Income <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-money-bill input-icon"></i><input type="number" class="form-control" id="loanIncome" placeholder="e.g. 80000 (in KES)" min="0" /></div>
+            </div>
+            <div class="form-group" style="grid-column:1/-1">
+              <label class="form-label">Employer / Business Name</label>
+              <div class="input-group"><i class="fas fa-building input-icon"></i><input type="text" class="form-control" id="loanEmployer" placeholder="Company or business name" /></div>
+            </div>
+          </div>
+
+          <!-- Loan Details -->
+          <div class="form-section-title"><i class="fas fa-hand-holding-usd"></i> Loan Details</div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Loan Amount <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-coins input-icon"></i><input type="number" class="form-control" id="loanAmount" placeholder="e.g. 100000" min="1000" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Currency <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-exchange-alt input-icon"></i>
+                <select class="form-control" id="loanCurrency">
+                  <option value="KES">KES — Kenyan Shilling (1,000 – 1,000,000)</option>
+                  <option value="USD">USD — US Dollar (10 – 10,000)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Loan Duration (Months) <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-calendar-alt input-icon"></i>
+                <select class="form-control" id="loanDuration">
+                  <option value="">Select duration</option>
+                  <option value="1">1 Month</option>
+                  <option value="2">2 Months</option>
+                  <option value="3">3 Months</option>
+                  <option value="6">6 Months</option>
+                  <option value="12">12 Months (1 Year)</option>
+                  <option value="18">18 Months</option>
+                  <option value="24">24 Months (2 Years)</option>
+                  <option value="36">36 Months (3 Years)</option>
+                  <option value="48">48 Months (4 Years)</option>
+                  <option value="60">60 Months (5 Years)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Loan Purpose <span style="color:var(--danger)">*</span></label>
+              <div class="input-group"><i class="fas fa-tag input-icon"></i>
+                <select class="form-control" id="loanPurpose">
+                  <option value="">Select purpose</option>
+                  <option value="Personal Expenses">Personal Expenses</option>
+                  <option value="Business Capital">Business Capital / Working Capital</option>
+                  <option value="Medical Expenses">Medical Expenses</option>
+                  <option value="School Fees / Education">School Fees / Education</option>
+                  <option value="Asset Purchase">Asset Purchase (Vehicle/Equipment)</option>
+                  <option value="Home Improvement">Home Improvement / Rent</option>
+                  <option value="Emergency">Emergency</option>
+                  <option value="Debt Consolidation">Debt Consolidation</option>
+                  <option value="Agricultural">Agricultural / Farming</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Notes -->
+          <div class="form-group">
+            <label class="form-label">Additional Information (Optional)</label>
+            <textarea class="form-control" rows="3" id="loanNotes" placeholder="Any additional details that may support your application..."></textarea>
+          </div>
+
+          <!-- ID Upload -->
+          <div class="form-section-title"><i class="fas fa-upload"></i> Document Upload</div>
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="upload-text" id="uploadText"><span>Click to upload</span> or drag and drop your National ID / Passport scan</div>
+            <div style="font-size:.78rem;color:var(--text-muted);margin-top:8px">Supported: JPG, PNG, PDF · Max 5MB</div>
+            <input type="file" id="idUpload" accept=".jpg,.jpeg,.png,.pdf" style="display:none" />
+          </div>
+
+          <!-- Terms -->
+          <div class="terms-box" style="margin-top:24px">
+            <label class="terms-check">
+              <input type="checkbox" id="termsCheck" />
+              <span>I have read and agree to the <a href="#" data-modal="loanTermsModal">Terms &amp; Conditions</a> and <a href="#" data-modal="privacyLoanModal">Privacy Policy</a> of MZAZI TECH ENTERPRISE. I confirm that all information provided is accurate and truthful.</span>
+            </label>
+          </div>
+
+          <!-- Loan Summary -->
+          <div class="loan-summary-card" id="loanSummary">
+            <h4 style="font-size:1rem;margin-bottom:16px"><i class="fas fa-receipt" style="color:var(--primary)"></i> Application Summary</h4>
+            <div class="loan-summary-row"><span>Applicant</span><strong id="sumName">—</strong></div>
+            <div class="loan-summary-row"><span>Loan Amount</span><strong id="sumAmount">—</strong></div>
+            <div class="loan-summary-row"><span>Duration</span><strong id="sumDuration">—</strong></div>
+            <div class="loan-summary-row"><span>Purpose</span><strong id="sumPurpose">—</strong></div>
+            <div class="loan-summary-row"><span>Est. Monthly Payment</span><strong id="sumMonthly" style="color:var(--primary)">—</strong></div>
+            <div class="loan-summary-row"><span style="font-weight:700">Est. Total Repayment</span><strong id="sumTotal" style="color:var(--danger)">—</strong></div>
+          </div>
+
+          <!-- SUBMIT -->
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitLoanBtn">
+            <i class="fab fa-whatsapp"></i> Submit Application via WhatsApp
+          </button>
+          <p style="text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:12px">
+            <i class="fas fa-info-circle"></i> Clicking submit will open WhatsApp with your application details pre-filled for our team to review.
+          </p>
+        </form>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <div style="display:flex;flex-direction:column;gap:20px;position:sticky;top:96px">
+        <!-- Rate Card -->
+        <div style="background:var(--grad-primary);border-radius:var(--radius);padding:28px;color:#fff">
+          <h4 style="margin-bottom:16px;font-size:1rem">Interest Rates</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;padding:10px;background:rgba(255,255,255,.1);border-radius:8px"><span style="font-size:.85rem">Monthly</span><strong style="color:#fbbf24">15%</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:10px;background:rgba(255,255,255,.1);border-radius:8px"><span style="font-size:.85rem">Quarterly</span><strong style="color:#fbbf24">35%</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:10px;background:rgba(255,255,255,.1);border-radius:8px"><span style="font-size:.85rem">Annually</span><strong style="color:#fbbf24">75%</strong></div>
+          </div>
+        </div>
+        <!-- Loan Amounts -->
+        <div style="background:var(--surface);border-radius:var(--radius);padding:28px;border:1px solid var(--border)">
+          <h4 style="margin-bottom:16px;font-size:1rem">Loan Limits</h4>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:12px;background:var(--bg-secondary);border-radius:8px">
+              <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:4px">KES Loans</div>
+              <div style="font-weight:700;color:var(--primary)">KES 1,000 — KES 1,000,000</div>
+            </div>
+            <div style="padding:12px;background:var(--bg-secondary);border-radius:8px">
+              <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:4px">USD Loans</div>
+              <div style="font-weight:700;color:var(--primary)">USD 10 — USD 10,000</div>
+            </div>
+          </div>
+        </div>
+        <!-- Contact -->
+        <div style="background:var(--surface);border-radius:var(--radius);padding:28px;border:1px solid var(--border)">
+          <h4 style="margin-bottom:16px;font-size:1rem">Need Help?</h4>
+          <a href="https://wa.me/254741388986" class="btn btn-wa btn-full" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          <div style="text-align:center;margin-top:12px;font-size:.82rem;color:var(--text-muted)"><i class="fas fa-clock"></i> +254 741 388 986</div>
+        </div>
+        <!-- FAQ link -->
+        <div style="padding:20px;background:rgba(26,86,219,.06);border-radius:var(--radius);border:1px solid rgba(26,86,219,.12);text-align:center">
+          <i class="fas fa-question-circle" style="font-size:1.6rem;color:var(--primary);margin-bottom:8px;display:block"></i>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Have questions about the application?</p>
+          <a href="faq.html" class="btn btn-outline btn-sm btn-full">Read our FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS MODAL -->
+<div class="modal-overlay" id="loanTermsModal">
+  <div class="modal-box" style="max-width:600px;text-align:left">
+    <h2 style="margin-bottom:16px;font-size:1.3rem">Loan Terms &amp; Conditions</h2>
+    <div class="terms-modal-body">
+      <h4>Interest Rates</h4><p>MZAZI TECH ENTERPRISE charges high-risk premium rates: 15% monthly, 35% quarterly, or 75% annually. Rates are non-negotiable and disclosed upfront.</p>
+      <h4>Eligibility</h4><p>Applicants must be 18+ years old with a verifiable income source. All applications are subject to verification.</p>
+      <h4>Disbursement</h4><p>Approved funds are disbursed within 24 hours to your registered M-Pesa number or bank account.</p>
+      <h4>Repayment</h4><p>Repayments must be made on or before the due date. Late payments incur a 5% penalty fee per week of delay.</p>
+      <h4>Default</h4><p>Failure to repay will result in reporting to credit bureaus, legal action, and recovery through registered guarantors or assets where applicable.</p>
+    </div>
+    <button class="btn btn-primary btn-full" style="margin-top:20px" data-close-modal>I Agree &amp; Accept</button>
+  </div>
+</div>
+<div class="modal-overlay" id="privacyLoanModal">
+  <div class="modal-box" style="max-width:600px;text-align:left">
+    <h2 style="margin-bottom:16px;font-size:1.3rem">Privacy Policy</h2>
+    <div class="terms-modal-body"><p>Your data is collected for loan processing and identity verification only. We do not sell data to third parties. All information is protected with AES-256 encryption. For data requests, email privacy@mzazitech.com.</p></div>
+    <button class="btn btn-primary btn-full" style="margin-top:20px" data-close-modal>Accept</button>
+  </div>
+</div>
+
+<!-- Footer Mini -->
+<div style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:.85rem;color:var(--text-muted)">
+  &copy; 2024 MZAZI TECH ENTERPRISE &nbsp;|&nbsp; <a href="contact.html" style="color:var(--primary)">Contact Support</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
