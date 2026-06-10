@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — MZAZI TECH ENTERPRISE</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="notification-container"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">M</div>
+      <div><div class="logo-text">MZAZI TECH</div><div class="logo-sub">Enterprise</div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="loan.html">Apply</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="contact.html">Support</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+      <button class="statement-btn"><i class="fas fa-download"></i> Statement</button>
+      <button class="btn btn-danger btn-sm logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <div class="sidebar-avatar user-avatar">U</div>
+      <div>
+        <div class="sidebar-name user-name">Loading...</div>
+        <div class="sidebar-email user-email">—</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Main Menu</div>
+      <div class="sidebar-item active"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+      <a href="loan.html" class="sidebar-item"><i class="fas fa-paper-plane"></i> Apply for Loan</a>
+      <a href="payment.html" class="sidebar-item"><i class="fas fa-credit-card"></i> Make Payment</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Loans</div>
+      <div class="sidebar-item" onclick="showTab('active')"><i class="fas fa-check-circle"></i> Active Loans <span class="badge">2</span></div>
+      <div class="sidebar-item" onclick="showTab('pending')"><i class="fas fa-clock"></i> Pending Loans <span class="badge" style="background:var(--gold)">1</span></div>
+      <div class="sidebar-item" onclick="showTab('history')"><i class="fas fa-history"></i> Loan History</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Account</div>
+      <div class="sidebar-item" onclick="showTab('profile')"><i class="fas fa-user-cog"></i> Profile Settings</div>
+      <div class="sidebar-item" onclick="showTab('notifications')"><i class="fas fa-bell"></i> Notifications <span class="badge">3</span></div>
+      <div class="sidebar-item" style="color:var(--danger)" id="logoutBtn2" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i> Logout</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+    <!-- WELCOME -->
+    <div class="dash-welcome">
+      <h2>Good morning, <span class="user-name">User</span> 👋</h2>
+      <p>Here's your financial overview for today, <span id="todayDate"></span></p>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="kpi-grid">
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-icon"><i class="fas fa-wallet"></i></div>
+        <div class="kpi-value">KES 85,000</div>
+        <div class="kpi-label">Outstanding Balance</div>
+        <div class="kpi-change down"><i class="fas fa-arrow-down"></i> -5% from last month</div>
+      </div>
+      <div class="kpi-card kpi-purple">
+        <div class="kpi-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <div class="kpi-value">KES 500,000</div>
+        <div class="kpi-label">Total Borrowed</div>
+        <div class="kpi-change up"><i class="fas fa-arrow-up"></i> +2 loans this year</div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-icon"><i class="fas fa-check-double"></i></div>
+        <div class="kpi-value">KES 415,000</div>
+        <div class="kpi-label">Total Repaid</div>
+        <div class="kpi-change up"><i class="fas fa-arrow-up"></i> On track</div>
+      </div>
+      <div class="kpi-card kpi-gold">
+        <div class="kpi-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="kpi-value">KES 32,500</div>
+        <div class="kpi-label">Next Payment Due</div>
+        <div class="kpi-change" style="color:var(--gold)"><i class="fas fa-clock"></i> Due Feb 1, 2025</div>
+      </div>
+    </div>
+
+    <!-- ACTIVE LOANS + CREDIT SCORE -->
+    <div class="dash-grid-2">
+      <!-- Active Loans Table -->
+      <div class="dash-card" id="loanTableCard">
+        <div class="dash-card-header">
+          <h3>Active Loans</h3>
+          <a href="loan.html" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> New Loan</a>
+        </div>
+        <div class="dash-card-body" style="padding:0;overflow:auto">
+          <table class="loan-table">
+            <thead>
+              <tr>
+                <th>Loan ID</th>
+                <th>Amount</th>
+                <th>Purpose</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="loansTableBody">
+              <tr>
+                <td class="font-mono" style="font-size:.82rem">MTE-2024-001</td>
+                <td><strong>KES 150,000</strong></td>
+                <td>Business Capital</td>
+                <td>Feb 1, 2025</td>
+                <td><span class="status-badge status-active"><i class="fas fa-circle" style="font-size:.5rem"></i> Active</span></td>
+                <td><a href="payment.html" class="btn btn-primary btn-sm">Pay</a></td>
+              </tr>
+              <tr>
+                <td class="font-mono" style="font-size:.82rem">MTE-2024-002</td>
+                <td><strong>KES 50,000</strong></td>
+                <td>School Fees</td>
+                <td>Mar 15, 2025</td>
+                <td><span class="status-badge status-active"><i class="fas fa-circle" style="font-size:.5rem"></i> Active</span></td>
+                <td><a href="payment.html" class="btn btn-primary btn-sm">Pay</a></td>
+              </tr>
+              <tr>
+                <td class="font-mono" style="font-size:.82rem">MTE-2024-003</td>
+                <td><strong>USD 500</strong></td>
+                <td>Emergency</td>
+                <td>—</td>
+                <td><span class="status-badge status-pending"><i class="fas fa-circle" style="font-size:.5rem"></i> Pending</span></td>
+                <td><span style="font-size:.82rem;color:var(--text-muted)">Under Review</span></td>
+              </tr>
+              <tr>
+                <td class="font-mono" style="font-size:.82rem">MTE-2023-008</td>
+                <td><strong>KES 200,000</strong></td>
+                <td>Business Expansion</td>
+                <td>Cleared</td>
+                <td><span class="status-badge status-completed"><i class="fas fa-circle" style="font-size:.5rem"></i> Completed</span></td>
+                <td><span class="statement-btn btn-sm" style="cursor:pointer"><i class="fas fa-download"></i></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Credit Score + Recent Transactions -->
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <!-- Credit Score -->
+        <div class="dash-card">
+          <div class="dash-card-header"><h3>Credit Score</h3><span style="font-size:.82rem;color:var(--success);font-weight:700"><i class="fas fa-arrow-up"></i> Improving</span></div>
+          <div class="dash-card-body" style="text-align:center">
+            <div class="credit-score-circle" style="--pct:72%">
+              <div class="credit-score-inner">
+                <div class="credit-score-num">720</div>
+                <div class="credit-score-label">GOOD</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
+              <div style="text-align:center;padding:8px;background:var(--bg-secondary);border-radius:8px">
+                <div style="font-size:.7rem;color:var(--text-muted)">Poor</div>
+                <div style="height:4px;background:var(--danger);border-radius:99px;margin-top:4px"></div>
+              </div>
+              <div style="text-align:center;padding:8px;background:rgba(26,86,219,.08);border-radius:8px;border:1px solid rgba(26,86,219,.2)">
+                <div style="font-size:.7rem;color:var(--primary);font-weight:700">Good ✓</div>
+                <div style="height:4px;background:var(--primary);border-radius:99px;margin-top:4px"></div>
+              </div>
+              <div style="text-align:center;padding:8px;background:var(--bg-secondary);border-radius:8px">
+                <div style="font-size:.7rem;color:var(--text-muted)">Excellent</div>
+                <div style="height:4px;background:var(--success);border-radius:99px;margin-top:4px"></div>
+              </div>
+            </div>
+            <p style="font-size:.82rem;color:var(--text-muted);margin-top:12px">Pay on time to improve your score and unlock better rates.</p>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="dash-card">
+          <div class="dash-card-header"><h3>Quick Actions</h3></div>
+          <div class="dash-card-body" style="display:flex;flex-direction:column;gap:10px">
+            <a href="loan.html" class="btn btn-primary btn-full"><i class="fas fa-plus"></i> Apply for New Loan</a>
+            <a href="payment.html" class="btn btn-success btn-full"><i class="fas fa-credit-card"></i> Make a Payment</a>
+            <button class="statement-btn w-full" style="padding:12px 20px;justify-content:center;display:flex"><i class="fas fa-download"></i> Download Statement</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECENT TRANSACTIONS -->
+    <div class="dash-card" style="margin-bottom:28px">
+      <div class="dash-card-header">
+        <h3>Recent Transactions</h3>
+        <button class="btn btn-outline btn-sm">View All</button>
+      </div>
+      <div class="dash-card-body">
+        <div class="transaction-list">
+          <div class="transaction-item">
+            <div class="tx-icon tx-credit"><i class="fas fa-arrow-down"></i></div>
+            <div class="tx-info"><div class="tx-name">Loan Disbursed — MTE-2024-001</div><div class="tx-date">Jan 15, 2025 · 9:23 AM</div></div>
+            <div class="tx-amount credit">+KES 150,000</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-debit"><i class="fas fa-arrow-up"></i></div>
+            <div class="tx-info"><div class="tx-name">EMI Payment — MTE-2024-001</div><div class="tx-date">Jan 31, 2025 · 10:00 AM</div></div>
+            <div class="tx-amount debit">-KES 32,500</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-credit"><i class="fas fa-arrow-down"></i></div>
+            <div class="tx-info"><div class="tx-name">Loan Disbursed — MTE-2024-002</div><div class="tx-date">Jan 20, 2025 · 2:15 PM</div></div>
+            <div class="tx-amount credit">+KES 50,000</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-pending"><i class="fas fa-clock"></i></div>
+            <div class="tx-info"><div class="tx-name">Loan Application — MTE-2024-003 (Pending)</div><div class="tx-date">Jan 29, 2025 · 4:45 PM</div></div>
+            <div class="tx-amount" style="color:var(--gold)">USD 500</div>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-debit"><i class="fas fa-arrow-up"></i></div>
+            <div class="tx-info"><div class="tx-name">Processing Fee — MTE-2024-002</div><div class="tx-date">Jan 20, 2025 · 2:15 PM</div></div>
+            <div class="tx-amount debit">-KES 1,500</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE SETTINGS (hidden by default, toggled) -->
+    <div class="dash-card" id="profileSettingsCard" style="display:none;margin-bottom:28px">
+      <div class="dash-card-header"><h3>Profile Settings</h3></div>
+      <div class="dash-card-body">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <div class="input-group"><i class="fas fa-user input-icon"></i><input type="text" class="form-control" placeholder="Your full name" /></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-group"><i class="fas fa-envelope input-icon"></i><input type="email" class="form-control user-email" placeholder="your@email.com" /></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <div class="input-group"><i class="fas fa-phone input-icon"></i><input type="tel" class="form-control" placeholder="+254 7XX XXX XXX" /></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <div class="input-group"><i class="fas fa-globe input-icon"></i><input type="text" class="form-control" placeholder="Kenya" /></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">New Password</label>
+          <div class="input-group"><i class="fas fa-lock input-icon"></i><input type="password" class="form-control" placeholder="Leave blank to keep current password" /></div>
+        </div>
+        <button class="btn btn-primary" onclick="Notifications.show('Profile updated successfully!','success')"><i class="fas fa-save"></i> Save Changes</button>
+      </div>
+    </div>
+
+    <!-- NOTIFICATIONS PANEL (hidden by default) -->
+    <div class="dash-card" id="notificationsCard" style="display:none;margin-bottom:28px">
+      <div class="dash-card-header"><h3>Notifications</h3><button class="btn btn-outline btn-sm" onclick="Notifications.show('All marked as read','success')">Mark All Read</button></div>
+      <div class="dash-card-body">
+        <div class="transaction-list">
+          <div class="transaction-item">
+            <div class="tx-icon tx-pending"><i class="fas fa-bell"></i></div>
+            <div class="tx-info"><div class="tx-name">Loan Application Under Review</div><div class="tx-date">MTE-2024-003 · Jan 29, 2025</div></div>
+            <span class="status-badge status-pending">New</span>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-debit"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="tx-info"><div class="tx-name">Payment Reminder</div><div class="tx-date">MTE-2024-001 due Feb 1, 2025</div></div>
+            <span class="status-badge status-pending">New</span>
+          </div>
+          <div class="transaction-item">
+            <div class="tx-icon tx-credit"><i class="fas fa-check-circle"></i></div>
+            <div class="tx-info"><div class="tx-name">EMI Payment Confirmed</div><div class="tx-date">MTE-2024-001 · Jan 31, 2025</div></div>
+            <span class="status-badge status-active">Read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Live Chat -->
+<div class="live-chat-widget">
+  <div class="chat-panel">
+    <div class="chat-header">
+      <div><div class="chat-header-title">MZAZI Support</div><div class="chat-header-sub">Usually replies in minutes</div></div>
+      <button class="chat-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages">
+      <div class="chat-msg agent">Hello! How can I help you today?</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" placeholder="Type your message..." />
+      <button class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn"><i class="fas fa-comments"></i><span class="chat-dot"></span></button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-KE', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  function showTab(tab) {
+    document.getElementById('profileSettingsCard').style.display = 'none';
+    document.getElementById('notificationsCard').style.display = 'none';
+    document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+    if (tab === 'profile') { document.getElementById('profileSettingsCard').style.display = 'block'; }
+    else if (tab === 'notifications') { document.getElementById('notificationsCard').style.display = 'block'; }
+  }
+  function doLogout() {
+    sessionStorage.removeItem('mzazi_user');
+    Notifications.show('Logged out successfully!', 'success');
+    setTimeout(() => { window.location.href = 'login.html'; }, 1000);
+  }
+</script>
+</body>
+</html>
