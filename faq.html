@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — MZAZI TECH ENTERPRISE</title>
+  <meta name="description" content="Frequently asked questions about MZAZI TECH ENTERPRISE loan services, interest rates, eligibility, repayment, and more." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="notification-container"></div>
+
+<nav class="navbar scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">M</div>
+      <div><div class="logo-text">MZAZI TECH</div><div class="logo-sub">Enterprise</div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="loan.html">Apply</a></li>
+      <li><a href="payment.html">Payment</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="loan.html" class="btn btn-primary btn-sm">Apply Now</a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a><a href="loan.html">Apply</a>
+  <a href="payment.html">Payment</a><a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a><a href="login.html">Login</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+  <p>Everything you need to know about MZAZI TECH ENTERPRISE loan services</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:.7rem"></i> FAQ</div>
+</div>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="container">
+    <!-- FAQ Category Tabs -->
+    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px">
+      <button class="btn btn-primary btn-sm faq-cat-btn active" onclick="filterFAQ('all',this)">All Questions</button>
+      <button class="btn btn-outline btn-sm faq-cat-btn" onclick="filterFAQ('eligibility',this)">Eligibility</button>
+      <button class="btn btn-outline btn-sm faq-cat-btn" onclick="filterFAQ('rates',this)">Rates &amp; Fees</button>
+      <button class="btn btn-outline btn-sm faq-cat-btn" onclick="filterFAQ('process',this)">Application</button>
+      <button class="btn btn-outline btn-sm faq-cat-btn" onclick="filterFAQ('repayment',this)">Repayment</button>
+      <button class="btn btn-outline btn-sm faq-cat-btn" onclick="filterFAQ('account',this)">Account</button>
+    </div>
+
+    <!-- Search -->
+    <div class="faq-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="faqSearch" placeholder="Search questions..." />
+    </div>
+
+    <!-- FAQ LIST -->
+    <div class="faq-list">
+
+      <!-- ELIGIBILITY -->
+      <div class="faq-item" data-cat="eligibility">
+        <div class="faq-question">
+          <span>Who is eligible to apply for a loan with MZAZI TECH ENTERPRISE?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>To be eligible for a MZAZI TECH ENTERPRISE loan, you must:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc">Be at least 18 years old (maximum 70 years)</li>
+            <li style="list-style:disc">Have a verifiable source of income (employment, business, pension, or regular remittances)</li>
+            <li style="list-style:disc">Be a resident of an eligible country or have a valid passport</li>
+            <li style="list-style:disc">Have a valid national ID or passport</li>
+            <li style="list-style:disc">Have an active phone number and email address</li>
+          </ul>
+          <p style="margin-top:10px">We serve customers in Kenya, Uganda, Tanzania, Rwanda, Ethiopia, Nigeria, Ghana, South Africa, UK, US, Canada, Australia, and 35+ other countries.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="eligibility">
+        <div class="faq-question">
+          <span>Do I need a good credit score to qualify?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No — we do not require a formal credit score from traditional bureaus. MZAZI TECH ENTERPRISE uses its own proprietary risk assessment model to evaluate applicants based on income, employment stability, and repayment capacity. First-time applicants and those with no credit history are welcome to apply.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="eligibility">
+        <div class="faq-question">
+          <span>Can diaspora Kenyans (living abroad) apply for a loan?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! MZAZI TECH ENTERPRISE specifically serves the Kenyan diaspora and other African communities living abroad. You can apply for loans in USD from any country. You will need a valid passport, proof of income (payslips or bank statements), and a Kenyan contact person (guarantor) in some cases for large amounts.</p>
+        </div>
+      </div>
+
+      <!-- RATES & FEES -->
+      <div class="faq-item" data-cat="rates">
+        <div class="faq-question">
+          <span>What are the interest rates at MZAZI TECH ENTERPRISE?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Our interest rates reflect our fast-approval, high-risk lending model:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>Monthly Rate:</strong> 15% per month on the outstanding balance</li>
+            <li style="list-style:disc"><strong>Quarterly Rate:</strong> 35% per quarter (3 months)</li>
+            <li style="list-style:disc"><strong>Annual Rate:</strong> 75% per annum</li>
+          </ul>
+          <p style="margin-top:10px">These are high-risk premium rates. In exchange, we offer: same-day approval in many cases, no guarantor required for smaller loans, and minimal paperwork. All rates are disclosed before you agree to any loan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="rates">
+        <div class="faq-question">
+          <span>Are there any hidden fees or charges?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>No hidden fees. All applicable charges are disclosed upfront before you accept any loan offer. The standard fees include:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>Processing Fee:</strong> 1.5% of loan amount (charged once at disbursement)</li>
+            <li style="list-style:disc"><strong>Late Payment Penalty:</strong> 5% of outstanding balance per week of delay</li>
+            <li style="list-style:disc"><strong>Prepayment:</strong> No penalty — you can repay early for free</li>
+          </ul>
+          <p style="margin-top:10px">Our loan summary shows the complete cost before you submit your application.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="rates">
+        <div class="faq-question">
+          <span>What are the minimum and maximum loan amounts?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Our loan limits are:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>KES Loans:</strong> Minimum KES 1,000 — Maximum KES 1,000,000</li>
+            <li style="list-style:disc"><strong>USD Loans:</strong> Minimum USD 10 — Maximum USD 10,000</li>
+          </ul>
+          <p style="margin-top:10px">First-time borrowers are typically approved for lower amounts. Repeat customers with good repayment history may qualify for higher limits.</p>
+        </div>
+      </div>
+
+      <!-- APPLICATION PROCESS -->
+      <div class="faq-item" data-cat="process">
+        <div class="faq-question">
+          <span>How do I apply for a loan?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Applying is simple and takes under 5 minutes:</p>
+          <ol style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:8px">
+            <li style="list-style:decimal"><strong>Step 1:</strong> Go to the <a href="loan.html" style="color:var(--primary);font-weight:600">Loan Application</a> page.</li>
+            <li style="list-style:decimal"><strong>Step 2:</strong> Fill in your personal details, employment info, and loan requirements.</li>
+            <li style="list-style:decimal"><strong>Step 3:</strong> Upload a copy of your National ID or Passport.</li>
+            <li style="list-style:decimal"><strong>Step 4:</strong> Review the loan summary and submit — this opens WhatsApp with your details pre-filled for our team.</li>
+            <li style="list-style:decimal"><strong>Step 5:</strong> Our team reviews your application within 24 hours and contacts you for next steps.</li>
+            <li style="list-style:decimal"><strong>Step 6:</strong> Upon approval, funds are disbursed to your M-Pesa or bank account.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="process">
+        <div class="faq-question">
+          <span>How long does the approval process take?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Most applications are reviewed and a decision communicated within <strong>24 hours</strong> of submission. Emergency loan applications are prioritized and may be approved within <strong>2–4 hours</strong>. Complex applications (large amounts, business loans) may take up to 48 hours for thorough review.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="process">
+        <div class="faq-question">
+          <span>What documents do I need to apply?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Required documents (digital copies accepted):</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc">National ID or valid passport</li>
+            <li style="list-style:disc">Proof of income (last 3 months' payslips, business records, or bank statement)</li>
+            <li style="list-style:disc">Recent utility bill or bank statement (for address verification)</li>
+          </ul>
+          <p style="margin-top:10px">Additional documents may be requested for larger loan amounts or specific loan types.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="process">
+        <div class="faq-question">
+          <span>Why does the application go through WhatsApp?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We use WhatsApp as our primary communication channel for several reasons:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc">It's secure, end-to-end encrypted, and widely accessible</li>
+            <li style="list-style:disc">Allows our team to quickly verify your identity with a video/voice call if needed</li>
+            <li style="list-style:disc">Enables faster communication and real-time updates on your application</li>
+            <li style="list-style:disc">More reliable than email for document sharing in many regions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- REPAYMENT -->
+      <div class="faq-item" data-cat="repayment">
+        <div class="faq-question">
+          <span>How do I repay my loan?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>You can repay your loan through our <a href="payment.html" style="color:var(--primary);font-weight:600">Payment page</a> powered by Paystack. We accept:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>M-Pesa</strong> — via Paystack STK Push</li>
+            <li style="list-style:disc"><strong>Visa &amp; Mastercard</strong> — credit and debit cards</li>
+            <li style="list-style:disc"><strong>Bank Transfer</strong> — via PESALINK or direct transfer</li>
+          </ul>
+          <p style="margin-top:10px">You will need your Loan ID to make a payment. Your Loan ID is provided when your loan is approved.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="repayment">
+        <div class="faq-question">
+          <span>What happens if I miss a payment or pay late?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We understand that financial difficulties can arise. Here's what happens:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>Day 1-3 Late:</strong> A reminder notification is sent. No penalty yet.</li>
+            <li style="list-style:disc"><strong>Week 1:</strong> A 5% late payment penalty is applied to the outstanding balance.</li>
+            <li style="list-style:disc"><strong>Week 2+:</strong> An additional 5% per week is charged until the overdue amount is settled.</li>
+          </ul>
+          <p style="margin-top:10px">If you're struggling to repay, <strong>contact us immediately</strong> via WhatsApp at +254 741 388 986. We offer restructuring options and can work out a manageable repayment plan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="repayment">
+        <div class="faq-question">
+          <span>Can I repay my loan early (prepayment)?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes — and we encourage it! MZAZI TECH ENTERPRISE does not charge any prepayment penalty. If you repay your loan early, you only pay interest for the period the loan was outstanding, saving you money. Early repayment also improves your credit score with us and increases your eligibility for larger loans in the future.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="repayment">
+        <div class="faq-question">
+          <span>Can I get a loan top-up or extension?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. If you have an active loan and have been making timely repayments, you may qualify for:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>Loan Top-Up:</strong> Additional funds added to your existing loan account</li>
+            <li style="list-style:disc"><strong>Loan Extension:</strong> Additional time to repay (subject to approval and additional interest charges)</li>
+          </ul>
+          <p style="margin-top:10px">Contact our team on WhatsApp to discuss your options.</p>
+        </div>
+      </div>
+
+      <!-- ACCOUNT -->
+      <div class="faq-item" data-cat="account">
+        <div class="faq-question">
+          <span>How do I access my loan dashboard?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Visit the <a href="login.html" style="color:var(--primary);font-weight:600">Login page</a> and enter your registered email and password. Your dashboard shows your active loans, repayment history, credit score, and transaction records. If you haven't set up an account yet, contact us via WhatsApp to get your credentials.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <div class="faq-question">
+          <span>How do I download my loan statement?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>You can download your loan statement directly from your Dashboard. Log in, navigate to your dashboard, and click the <strong>"Download Statement"</strong> button. The statement includes all transactions, disbursements, repayments, and outstanding balances in a text format. For a formal PDF statement (for visa applications, bank submissions, etc.), contact support.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <div class="faq-question">
+          <span>Is my personal and financial data secure?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. MZAZI TECH ENTERPRISE takes data security extremely seriously:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc">All data is encrypted with AES-256 encryption</li>
+            <li style="list-style:disc">HTTPS/SSL used for all data in transit</li>
+            <li style="list-style:disc">We never sell or share your personal data with third parties</li>
+            <li style="list-style:disc">Payment data is processed by Paystack (PCI DSS certified) — we never see your card details</li>
+          </ul>
+          <p style="margin-top:10px">For data requests or deletion, email privacy@mzazitech.com.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="account">
+        <div class="faq-question">
+          <span>How do I reset my account password?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>On the <a href="login.html" style="color:var(--primary);font-weight:600">Login page</a>, click "Forgot password?" and enter your registered email address. You will receive a password reset link within a few minutes. If you don't receive it, check your spam folder or contact our support team via WhatsApp for immediate assistance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="process">
+        <div class="faq-question">
+          <span>What currencies does MZAZI TECH ENTERPRISE support?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We currently support two currencies:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc"><strong>KES (Kenyan Shilling):</strong> For loans to Kenyan residents — disbursed via M-Pesa or Kenyan bank account</li>
+            <li style="list-style:disc"><strong>USD (US Dollar):</strong> For diaspora clients and international borrowers — disbursed via international bank transfer or mobile money</li>
+          </ul>
+          <p style="margin-top:10px">We are working on adding more African currencies. Stay tuned for updates.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="eligibility">
+        <div class="faq-question">
+          <span>Can students apply for a loan?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Students can apply for education loans with a guarantor. The guarantor must be employed or have a verifiable income source and must co-sign the loan agreement. The loan can be used for school fees, university tuition, professional courses, and related educational expenses. Contact us via WhatsApp to discuss your specific situation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-cat="repayment">
+        <div class="faq-question">
+          <span>How do I know my payment has been received?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </div>
+        <div class="faq-answer">
+          <p>After making a payment via Paystack, you will receive:</p>
+          <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:6px">
+            <li style="list-style:disc">An M-Pesa confirmation SMS (if you paid via M-Pesa)</li>
+            <li style="list-style:disc">A Paystack transaction email receipt</li>
+            <li style="list-style:disc">A confirmation notification on our platform</li>
+            <li style="list-style:disc">An updated balance on your dashboard</li>
+          </ul>
+          <p style="margin-top:10px">If you don't receive confirmation within 30 minutes, contact us with your transaction reference via WhatsApp.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STILL HAVE QUESTIONS? -->
+    <div style="text-align:center;margin-top:64px;padding:48px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border)">
+      <div style="font-size:2.5rem;margin-bottom:16px">🤔</div>
+      <h3 style="font-size:1.5rem;margin-bottom:12px">Still Have Questions?</h3>
+      <p style="color:var(--text-muted);max-width:500px;margin:0 auto 28px">Can't find what you're looking for? Our team is always ready to help — reach out via WhatsApp for the fastest response.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="https://wa.me/254741388986" class="btn btn-wa btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        <a href="contact.html" class="btn btn-outline btn-lg"><i class="fas fa-envelope"></i> Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER MINI -->
+<div style="background:var(--surface);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:.85rem;color:var(--text-muted)">
+  &copy; 2024 MZAZI TECH ENTERPRISE &nbsp;|&nbsp;
+  <a href="loan.html" style="color:var(--primary)">Apply for Loan</a> &nbsp;|&nbsp;
+  <a href="contact.html" style="color:var(--primary)">Contact</a>
+</div>
+
+<!-- Live Chat -->
+<div class="live-chat-widget">
+  <div class="chat-panel">
+    <div class="chat-header">
+      <div><div class="chat-header-title">MZAZI Support</div><div class="chat-header-sub">Usually replies in minutes</div></div>
+      <button class="chat-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages">
+      <div class="chat-msg agent">Hello! Can't find your question in the FAQ? Ask me directly here!</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" placeholder="Type your question..." />
+      <button class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn"><i class="fas fa-comments"></i><span class="chat-dot"></span></button>
+</div>
+
+<script src="script.js"></script>
+<script>
+function filterFAQ(cat, btn) {
+  document.querySelectorAll('.faq-cat-btn').forEach(b => { b.classList.remove('btn-primary'); b.classList.add('btn-outline'); });
+  btn.classList.add('btn-primary'); btn.classList.remove('btn-outline');
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) item.style.display = '';
+    else item.style.display = 'none';
+  });
+}
+</script>
+</body>
+</html>
